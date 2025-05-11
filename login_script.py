@@ -5,6 +5,7 @@ import requests
 def send_telegram_message(message):
     bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
+    print(bot_token,chat_id)
     url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
     payload = {
         "chat_id": chat_id,
@@ -50,6 +51,7 @@ def login_koyeb(email, password):
 
 if __name__ == "__main__":
     accounts = os.environ.get('WEBHOST', '').split()
+    print (accounts)
     login_statuses = []
 
     for account in accounts:
